@@ -627,12 +627,12 @@ static struct kgsl_device_platform_data kgsl_3d0_pdata = {
 	.pwr_data = {
 		.pwrlevel = {
 			{
-				.gpu_freq = 245760000,
-				.bus_freq = 200000000,
+				.gpu_freq = 355760000,
+				.bus_freq = 310000000,
 			},
 			{
-				.gpu_freq = 133330000,
-				.bus_freq = 0,
+				.gpu_freq = 243330000,
+				.bus_freq = 10000,
 			},
 		},
 		.init_level = 0,
@@ -667,10 +667,10 @@ struct platform_device msm_kgsl_3d0 = {
 void __init msm7x25a_kgsl_3d0_init(void)
 {
 	if (cpu_is_msm7x25a() || cpu_is_msm7x25aa()) {
-		kgsl_3d0_pdata.pwr_data.pwrlevel[0].gpu_freq = 133330000;
-		kgsl_3d0_pdata.pwr_data.pwrlevel[0].bus_freq = 160000000;
-		kgsl_3d0_pdata.pwr_data.pwrlevel[1].gpu_freq = 96000000;
-		kgsl_3d0_pdata.pwr_data.pwrlevel[1].bus_freq = 0;
+		kgsl_3d0_pdata.pwr_data.pwrlevel[0].gpu_freq = 243330000;
+		kgsl_3d0_pdata.pwr_data.pwrlevel[0].bus_freq = 170000000;
+		kgsl_3d0_pdata.pwr_data.pwrlevel[1].gpu_freq = 101000000;
+		kgsl_3d0_pdata.pwr_data.pwrlevel[1].bus_freq = 10000;
 	}
 }
 
@@ -737,10 +737,10 @@ struct platform_device led_pdev = {
 };
 
 static struct msm_acpu_clock_platform_data msm7x2x_clock_data = {
-	.acpu_switch_time_us = 50,
-	.max_speed_delta_khz = 400000,
-	.vdd_switch_time_us = 62,
-	.max_axi_khz = 200000,
+	.acpu_switch_time_us = 15,
+	.max_speed_delta_khz = 450000,
+	.vdd_switch_time_us = 25,
+	.max_axi_khz = 250000,
 };
 
 int __init msm7x2x_misc_init(void)
